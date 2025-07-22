@@ -1,0 +1,19 @@
+.ContactList{
+    border:1px solid rgb(220,220,220);
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 0px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.ContactList h4{
+    margin-bottom: 10px;
+}
+
+.ContactList .ContactItme_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
