@@ -2,11 +2,11 @@ import './Editor.css'
 import { useState, useRef } from 'react';
 
 
+
 const Editor = ({ onCreate }) => {
 
     const [content, setContent] = useState("");
     const contentRef = useRef();
-
 
     const onChangeContent = (e) => {
         setContent(e.target.value);
@@ -26,6 +26,7 @@ const Editor = ({ onCreate }) => {
         onCreate(content);
         setContent("");
     }
+
     return (
         <div className='Editor'>
             <input 

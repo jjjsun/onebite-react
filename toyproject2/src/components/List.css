@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 20px;
 }
+
 .List > input {
     width: 100%;
     border: none;

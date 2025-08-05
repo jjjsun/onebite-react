@@ -2,8 +2,8 @@ import TodoItem from "./TodoItem";
 import './List.css';
 import { useState } from "react";
 
-const List = ({todos, onUpdate, onDelete}) => {
 
+const List = ({todos, onUpdate, onDelete}) => {
     const [search, setSearch] = useState("");
 
     const onChangeSearch = (e) => {
@@ -18,6 +18,7 @@ const List = ({todos, onUpdate, onDelete}) => {
             todo.content.toLowerCase().includes(search.toLowerCase())
         )
     }
+    
     const filteredTodos = getFilteredData();
 
     return (
