@@ -1,9 +1,10 @@
-import TodoItem from "./TodoItem";
-import './List.css';
-import { useState } from "react";
+import './List.css'
+import TodoItem from './TodoItem';
+import { useState } from 'react';
 
 
-const List = ({todos, onUpdate, onDelete}) => {
+const List = ({todos,onUpdate, onDelete}) => {
+
     const [search, setSearch] = useState("");
 
     const onChangeSearch = (e) => {
@@ -14,28 +15,26 @@ const List = ({todos, onUpdate, onDelete}) => {
         if(search === ""){
             return todos;
         }
-        return todos.filter((todo)=>
-            todo.content.toLowerCase().includes(search.toLowerCase())
-        )
+        return todos.filter((todo)=>todo.content.toLowerCase().includes(search.toLowerCase()));
     }
-    
-    const filteredTodos = getFilteredData();
+
+    const filteredData = getFilteredData();
 
     return (
-        <div className="List">
+        <div className='List'>
             <h4>Todo List 🌱</h4>
-            <input
+            <input 
                 value={search}
                 onChange={onChangeSearch}
-                placeholder="검색어를 입력하세요"
-            />
-            <div className="todos_wrapper">
-                {filteredTodos.map((todo)=>{
-                    return <TodoItem key={todo.id} {...todo} onUpdate={onUpdate} onDelete={onDelete}/>;
-                })}
+                placeholder='검색어를 입력하세요'/>
+            <div className='todos_wrapper'>
+                {filteredData.map((todo)=>{
+                    return <TodoItem onUpdate={onUpdate} onDelete={onDelete} key={todo.id} {...todo}/>})}
+            
             </div>
         </div>
     )
 }
+
 
 export default List;
