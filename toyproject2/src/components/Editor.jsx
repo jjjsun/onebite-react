@@ -1,8 +1,10 @@
 import './Editor.css'
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
+import { TodoDispatchContext } from '../App';
 
+const Editor = () =>{
 
-const Editor = ({onCreate}) =>{
+    const {onCreate} = useContext(TodoDispatchContext);   //구조분해 할당으로 onCreate만 불러오도록함
 
     const [content, setContent] = useState("");
     const contentRef = useRef();
